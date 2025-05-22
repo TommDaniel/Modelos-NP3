@@ -1,4 +1,4 @@
-import shutil 
+import shutil
 import os
 from math import sqrt
 from numpy import concatenate
@@ -41,18 +41,18 @@ from keras.layers import Conv1D
 now = datetime.now()
 name4 = now
 os.mkdir(str(name4))
-caminho_destino = str('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/' + str(name4))
+caminho_destino = str('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/' + str(name4))
 log = open('ManDados.txt', 'a')
 log.write("------Manipulação dos dados iniciada em: " + str(now) + "\n\n")
 log.close()
 inicio = time.time()
 
 
-caminho = r'/home/davilemos/Área de Trabalho/MODELOS'
+caminho = r'/home/davilemos/Área de Trabalho/modelos'
 cmh = os.path.join(caminho, 'P20Inf')
 ################################################Potreiro 20 Infestado#############################################################
 # load dataset
-dataset1 = read_csv('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/e1.csv', header=0, index_col=0, delimiter=',')
+dataset1 = read_csv('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/e1-leonardo.csv', header=0, index_col=0, delimiter=';')
 values1 = dataset1.values
 # integer encode direction
 encoder = LabelEncoder()
@@ -79,7 +79,7 @@ scaled1 = DataFrame(scaled1)
 values1 = scaled1.values
 
 #n_train = 24
-n_train = 36
+n_train = 26
 train1 = values1[:n_train, :]
 test1 = values1[n_train:, :]
 #print(train)
@@ -112,7 +112,7 @@ log = open('ManDados.txt', 'a')
 log.write("------ Manipulação dos dados encerrada em: " + str(now) + "\n\nTempo de execução: " + str(t1) )
 log.close()
 
-caminho_origem = str('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/ManDados.txt')
+caminho_origem = str('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/ManDados.txt')
 shutil.move(caminho_origem, caminho_destino)
 
 #DEFINIçÃO E TREINAMENTO ModeloOriginal
@@ -171,7 +171,7 @@ log.write("------ Excecução Total encerrada em: " + str(now) + "\n\nTempo de e
 log.close()
 
 
-caminho_origem = str('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/DefTreinoMO.txt')
+caminho_origem = str('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/DefTreinoMO.txt')
 shutil.move(caminho_origem, caminho_destino)
 
 #CÁLCULOS SEM KERAS TUNER
@@ -229,7 +229,7 @@ log = open('CalcSKT.txt', 'a')
 log.write("------ Cálculos encerrados em: " + str(now) + "\n\nTempo de execução: " + str(t3) )
 log.close()
 
-caminho_origem = str('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/CalcSKT.txt')
+caminho_origem = str('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/CalcSKT.txt')
 shutil.move(caminho_origem, caminho_destino)
 
 from keras.utils import plot_model
@@ -265,9 +265,9 @@ pyplot.savefig(f'GDisp_SKT.png', dpi=dpi*2)
 
 pyplot.close()
 
-caminho_origem = str('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/GBoxP_SKT.png')
+caminho_origem = str('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/GBoxP_SKT.png')
 shutil.move(caminho_origem, caminho_destino)
-caminho_origem = str('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/GDisp_SKT.png')
+caminho_origem = str('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/GDisp_SKT.png')
 shutil.move(caminho_origem, caminho_destino)
 
 #print('P20 - Infestado')
@@ -300,7 +300,7 @@ for b in inv_yhat1:
 	file.write(str('%.2f' % b) + ',' + ' ')
 file.close()
 
-caminho_origem = str('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/Log_SKT.txt')
+caminho_origem = str('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/Log_SKT.txt')
 shutil.move(caminho_origem, caminho_destino)
 
 

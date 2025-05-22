@@ -67,18 +67,18 @@ while(aux<valor_inteiro):
 	now = datetime.now()
 	name4 = now
 	os.mkdir(str(name4))
-	caminho_destino = str('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/' + str(name4))
+	caminho_destino = str('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/' + str(name4))
 	log = open('ManDados.txt', 'a')
 	log.write("------Manipulação dos dados iniciada em: " + str(now) + "\n\n")
 	log.close()
 	inicio = time.time()
 
 
-	caminho = r'/home/davilemos/Área de Trabalho/MODELOS'
+	caminho = r'/home/davilemos/Área de Trabalho/modelos'
 	cmh = os.path.join(caminho, 'P20Inf')
 	################################################Potreiro 20 Infestado#############################################################
 	# load dataset
-	dataset1 = read_csv('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/e1_leo_2019.csv', header=0, index_col=0, delimiter=';')
+	dataset1 = read_csv('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/e1_leo_2019.csv', header=0, index_col=0, delimiter=';')
 	values1 = dataset1.values
 	# integer encode direction
 	encoder = LabelEncoder()
@@ -138,7 +138,7 @@ while(aux<valor_inteiro):
 	log.write("------ Manipulação dos dados encerrada em: " + str(now) + "\n\nTempo de execução: " + str(t1) )
 	log.close()
 
-	caminho_origem = str('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/ManDados.txt')
+	caminho_origem = str('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/ManDados.txt')
 	shutil.move(caminho_origem, caminho_destino)
 
 
@@ -197,7 +197,7 @@ while(aux<valor_inteiro):
 	log.write("------ Excecução encerrada em: " + str(now) + "\n\nTempo de execução: " + str(t4) )
 	log.close()
 
-	caminho_origem = str('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/RS.txt')
+	caminho_origem = str('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/RS.txt')
 	shutil.move(caminho_origem, caminho_destino)
 
 	model = best_model
@@ -207,7 +207,7 @@ while(aux<valor_inteiro):
 		with redirect_stdout(f):
 			model.summary()
 
-	caminho_origem = str('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/modelsummary.txt')
+	caminho_origem = str('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/modelsummary.txt')
 	shutil.move(caminho_origem, caminho_destino)
 
 	now = datetime.now()
@@ -225,7 +225,7 @@ while(aux<valor_inteiro):
 	log.write("------ Excecução Total encerrada em: " + str(now) + "\n\nTempo de execução: " + str(t5) )
 	log.close()
 
-	caminho_origem = str('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/TreinoMA.txt')
+	caminho_origem = str('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/TreinoMA.txt')
 	shutil.move(caminho_origem, caminho_destino)
 
 	now = datetime.now()
@@ -281,7 +281,7 @@ while(aux<valor_inteiro):
 	log.write("------ Cálculos encerrados em: " + str(now) + "\n\nTempo de execução: " + str(t6) )
 	log.close()
 
-	caminho_origem = str('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/CalcCKT.txt')
+	caminho_origem = str('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/CalcCKT.txt')
 	shutil.move(caminho_origem, caminho_destino)
 
 	erro = []
@@ -315,9 +315,9 @@ while(aux<valor_inteiro):
 
 	pyplot.close()
 
-	caminho_origem = str('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/GBoxP_CKT.png')
+	caminho_origem = str('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/GBoxP_CKT.png')
 	shutil.move(caminho_origem, caminho_destino)
-	caminho_origem = str('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/GDisp_CKT.png')
+	caminho_origem = str('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/GDisp_CKT.png')
 	shutil.move(caminho_origem, caminho_destino)
 	
 	#print('P20 - Infestado')
@@ -333,7 +333,7 @@ while(aux<valor_inteiro):
 	#print('Predito')
 	#print(inv_yhat1)
 
-	file = open('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/Log_CKT.txt', "w")
+	file = open('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/Log_CKT.txt', "w")
 	file.write('P20 - Infestado' + '\n')
 	file.write('Test RMSE:' + '%.3f' % rmse + '\n')
 	file.write('R2 linear:' + str(r_value ** 2) + '\n')
@@ -350,7 +350,7 @@ while(aux<valor_inteiro):
 		file.write(str('%.2f' % b) + ',' + ' ')
 	file.close()
 
-	caminho_origem = str('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/Log_CKT.txt')
+	caminho_origem = str('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/Log_CKT.txt')
 	shutil.move(caminho_origem, caminho_destino)
 
 	media1=t1+media1
@@ -360,7 +360,7 @@ while(aux<valor_inteiro):
 
 	aux = aux+1
 	
-	caminho_origem = str('/home/davilemos/Área de Trabalho/MODELOS/MODELO ORIGINAL (ÂNDERSON)/LSTM/KT')
+	caminho_origem = str('/home/davilemos/Área de Trabalho/modelos/modelo-original (ÂNDERSON)/LSTM/KT')
 	shutil.move(caminho_origem, caminho_destino)
 	
 	
