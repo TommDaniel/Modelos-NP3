@@ -1,4 +1,4 @@
-name: modelo_lstm
+name: Modelo-NP3
 channels:
   - conda-forge
   - defaults
@@ -10,8 +10,9 @@ dependencies:
   - matplotlib
   - scikit-learn
   - scipy
+  - psutil
   - pip:
-      - tensorflow
-      - keras-tuner
-      - folium
-      - branca
+	  - tensorflow
+	  - keras-tuner
+	  - folium
+	  - branca
