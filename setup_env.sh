@@ -1,2 +1,2 @@
-conda env create -f environment.tml
+conda env create -f environment.yml
 conda activate Modelos-NP3
