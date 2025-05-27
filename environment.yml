@@ -1,4 +1,4 @@
-name: modelo_lstm
+name: Modelos-NP3
 channels:
   - conda-forge
   - defaults
