@@ -20,7 +20,7 @@ from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 # Directory configuration
 # ---------------------------------------------------------------------------
 # Usa a pasta onde o script está salvo como BASE_DIR
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 DATA_DIR = os.path.join(BASE_DIR, "data")      # datasets & raw I/O
 LOGS_DIR = os.path.join(BASE_DIR, "logs")      # all log files
