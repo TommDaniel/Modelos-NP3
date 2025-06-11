@@ -96,7 +96,7 @@ for run_idx in range(1, NUM_RUNS + 1):
     values = DataFrame(scaler.fit_transform(values)).values
 
     # Train / test split & reshape for 3‑D GRU input
-    N_TRAIN = 38-12
+    n_train = max(1, len(dataset1) - 12)
     train, test = values[:N_TRAIN], values[N_TRAIN:]
     train_X, train_y = train[:, :-1], train[:, -1]
     test_X, test_y = test[:, :-1], test[:, -1]

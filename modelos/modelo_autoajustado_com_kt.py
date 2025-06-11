@@ -67,7 +67,7 @@ while aux < valor_inteiro:
     scaler = MinMaxScaler()
     scaled1 = DataFrame(scaler.fit_transform(values1)).values
 
-    n_train = 36
+    n_train = max(1, len(dataset1) - 12)
     train1, test1 = scaled1[:n_train, :], scaled1[n_train:, :]
     train_X1, train_y1 = train1[:, :-1], train1[:, -1]
     test_X1, test_y1 = test1[:, :-1], test1[:, -1]
